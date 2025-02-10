@@ -36,7 +36,7 @@ public class LoginTest extends TestBase {
 		Obj.view_buttonclick();
 		Obj.buttonclick();
 		String userRole=Obj.Dashcheck();
-		
+		  Obj.outbuttonclick();
 		Assert.assertEquals(userRole, expectedRole , "Login role verification failed!");
 		}
 

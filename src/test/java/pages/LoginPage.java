@@ -32,10 +32,13 @@ public class LoginPage {
 		        viewButton.click();}
 		        
 	    // Method to click the login button
-	    public void buttonclick() {
-	        WebElement loginButton = driver.findElement(By.xpath("//button[text()='Sign In']"));
-	        loginButton.click();
-	    }
+		    public void outbuttonclick() {
+	            WebElement logoutprofile = driver.findElement(By.xpath("//[@id="root"]/div/header/div[2]/div[1]/div[1]/img"));
+	            logoutprofile.click();
+
+	            WebElement logoutButton = driver.findElement(By.xpath("//[@id="root"]/div/header/div[2]/div[1]/div[2]/div[2]"));
+	            logoutButton.click();
+	            }
 	    public String Dashcheck() {
 	        // Verify login is successful by checking a specific element (dash_board title)
 	        WebElement dashboardElement = driver.findElement(By.xpath("//p[contains(@class, 'text-') and contains(text(), 'Manager 1')]"));
