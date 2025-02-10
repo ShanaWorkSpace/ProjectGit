@@ -29,23 +29,25 @@ public class LoginPage {
 	  // Method to click the login button
 		    public void view_buttonclick() {
 		        WebElement viewButton = driver.findElement(By.cssSelector("svg.h-6.text-gray-700.block"));
-		        viewButton.click();}
+		        viewButton.click();
+		        
+		        WebElement LoginButton = driver.findElement(By.xpath("/html/body/div/div/div[1]/div[2]/div[2]/div[4]/button"));
+		        LoginButton.click();
+		        
+		    }
 		        
 	    // Method to click the login button
 		    public void outbuttonclick() {
-	            WebElement logoutprofile = driver.findElement(By.xpath("//[@id="root"]/div/header/div[2]/div[1]/div[1]/img"));
+	            WebElement logoutprofile = driver.findElement(By.xpath("/html/body/div/div/header/div[2]/div[1]/div/img"));	            
 	            logoutprofile.click();
 
-	            WebElement logoutButton = driver.findElement(By.xpath("//[@id="root"]/div/header/div[2]/div[1]/div[2]/div[2]"));
+	            WebElement logoutButton = driver.findElement(By.xpath("/html/body/div/div/header/div[2]/div[1]/div[2]/div[2]"));
 	            logoutButton.click();
 	            }
-	    public String Dashcheck() {
-	        // Verify login is successful by checking a specific element (dash_board title)
-	        WebElement dashboardElement = driver.findElement(By.xpath("//p[contains(@class, 'text-') and contains(text(), 'Manager 1')]"));
-	        return dashboardElement.getText();
-	      
-	     
-	    }
+		    public String Dashcheck() {
+		        WebElement dashboardElement = driver.findElement(By.xpath("/html/body/div/div/header/div[2]/div[2]/p"));
+		        return dashboardElement.getText();
+		    }
 	    public void Count()
 	    {
 	    	WebElement total_visit=driver.findElement(By.xpath("/html/body/div/div/div/main/div[1]/div[1]/div[2]/div/h2"));
