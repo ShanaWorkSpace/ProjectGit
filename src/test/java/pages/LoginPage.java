@@ -49,6 +49,12 @@ public class LoginPage {
 		        WebElement dashboardElement = driver.findElement(By.xpath("/html/body/div/div/header/div[2]/div[2]/p"));
 		        return dashboardElement.getText();
 		    }
+		    
+		    public String getErrorMessage() {
+		        WebElement errorElement = driver.findElement(By.xpath("//div[@class='error-message']"));
+		        return errorElement.getText();
+		    }
+		    
 	    public void Count()
 	    {
 	    	WebElement total_visit=driver.findElement(By.xpath("/html/body/div/div/div/main/div[1]/div[1]/div[2]/div/h2"));

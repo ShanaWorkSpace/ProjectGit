@@ -19,28 +19,63 @@ public class LoginTest extends TestBase {
 		Obj=new LoginPage(driver);
 	}
 	
-	@DataProvider(name = "loginCredentials")
-    public Object[][] getLoginData() {
+	@DataProvider(name = "validLoginCredentials")
+    public Object[][] getValidLoginData() {
         return new Object[][]{
-            {ConfigReader.getProperty("manager.username"), ConfigReader.getProperty("manager.password"), "Manager 1"},
-            {ConfigReader.getProperty("associate1.username"), ConfigReader.getProperty("associate1.password"), "Associate 1"},
-            {ConfigReader.getProperty("associate2.username"), ConfigReader.getProperty("associate2.password"), "Associate 2"}
+            {"manager1@ictkerala.org", "@manager#952", "Manager 1"},
+            {"test2@ictkerala.org", "@test#952", "Associate 1"},
+            {"test1@ictkerala.org", "@test#951", "Associate 2"}
         };
     }
 	
-	@Test(dataProvider = "loginCredentials")
-	public void firsttest(String username, String password, String expectedRole) 
-	{
-		Obj.username(username);
-		Obj.password(password);
-		Obj.view_buttonclick();
-		
-		String userRole=Obj.Dashcheck();
-		Obj.outprofclick();
-		Obj.outbuttonclick();
-		System.out.println(userRole);
-		System.out.println(expectedRole);
-//		Assert.assertEquals(userRole, expectedRole , "Login role verification failed!");
-		}
+	@DataProvider(name = "invalidLoginCredentials")
+    public Object[][] getInvalidLoginData() {
+        return new Object[][]{
+            {"manager3@ictkerala.org", "@manager#953", "Invalid User Credentials"},
+            {"test4@ictkerala.org", "", "Please enter the password"},
+            {"", "@test#954", "Please enter the user id"},
+            {"*********@ictkerala.org", "@*****#967", "Invalid User Credentials"},
+            {"", "", "Please enter the user id"}
+        };
+    }
+
+
+	
+	 @Test(dataProvider = "validLoginCredentials", priority = 1)
+	 public void testValidLogin(String username, String password, String expectedRole) {
+	        Obj.username(username);
+	        Obj.password(password);
+	        Obj.view_buttonclick();
+	        
+	        String userRole = Obj.Dashcheck();
+	        Obj.outprofclick();
+	        Obj.outbuttonclick();
+	        
+	        System.out.println("Actual Role: " + userRole);
+	        System.out.println("Expected Role: " + expectedRole);
+	        
+	        Assert.assertEquals(userRole, expectedRole, "Login role verification failed!");
+	    }
+	 
+	 @Test(dataProvider = "invalidLoginCredentials", priority = 2)
+	    public void testInvalidLogin(String username, String password, String expectedMessage) {
+	        Obj.username(username);
+	        Obj.password(password);
+	        Obj.view_buttonclick();
+	        
+	        // Assuming an alert or message is displayed upon failure
+	        String actualMessage = ""; // Implement a method in LoginPage to capture error message
+	        try {
+	            actualMessage = Obj.getErrorMessage(); // Implement this method in LoginPage
+	        } catch (Exception e) {
+	            actualMessage = "No error message displayed";
+	        }
+	        
+	        System.out.println("Actual Message: " + actualMessage);
+	        System.out.println("Expected Message: " + expectedMessage);
+	        
+	        Assert.assertEquals(actualMessage, expectedMessage, "Error message mismatch for invalid login!");
+	    }
+	}
 
 }
