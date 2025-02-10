@@ -14,7 +14,7 @@ public class LoginPage {
 
 	    // Method to input user_name
 	    public void username(String username) {
-	        WebElement uname = driver.findElement(By.xpath("//input[@name='userId']"));
+	        WebElement uname = driver.findElement(By.xpath("/html/body/div/div/div[1]/div[2]/div[2]/div[1]/div/input"));
 	        uname.clear();
 	        uname.sendKeys(username);
 	    }
@@ -37,10 +37,11 @@ public class LoginPage {
 		    }
 		        
 	    // Method to click the login button
-		    public void outbuttonclick() {
+		    public void outprofclick() {
 	            WebElement logoutprofile = driver.findElement(By.xpath("/html/body/div/div/header/div[2]/div[1]/div/img"));	            
-	            logoutprofile.click();
-
+	            logoutprofile.click();}
+		    
+	        public void outbuttonclick() {
 	            WebElement logoutButton = driver.findElement(By.xpath("/html/body/div/div/header/div[2]/div[1]/div[2]/div[2]"));
 	            logoutButton.click();
 	            }

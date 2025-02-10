@@ -36,6 +36,7 @@ public class LoginTest extends TestBase {
 		Obj.view_buttonclick();
 		
 		String userRole=Obj.Dashcheck();
+		Obj.outprofclick();
 		Obj.outbuttonclick();
 		System.out.println(userRole);
 		System.out.println(expectedRole);
