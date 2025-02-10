@@ -13,21 +13,23 @@ public class LoginPage {
 	    }
 
 	    // Method to input user_name
-	    public void username() {
+	    public void username(String username) {
 	        WebElement uname = driver.findElement(By.xpath("//input[@name='userId']"));
-	        uname.sendKeys("manager1@ictkerala.org");
+	        uname.clear();
+	        uname.sendKeys(username);
 	    }
 
 	    // Method to input password
-	    public void password() {
+	    public void password(String password) {
 	        WebElement pwd = driver.findElement(By.xpath("//input[@name='password']"));
-	        pwd.sendKeys("@Manager#952");
+	        pwd.clear();
+	        pwd.sendKeys(password);
 	    }
 	     	     
 	  // Method to click the login button
 		    public void view_buttonclick() {
-		        WebElement loginButton = driver.findElement(By.cssSelector("svg.h-6.text-gray-700.block"));
-		        loginButton.click();}
+		        WebElement viewButton = driver.findElement(By.cssSelector("svg.h-6.text-gray-700.block"));
+		        viewButton.click();}
 		        
 	    // Method to click the login button
 	    public void buttonclick() {
