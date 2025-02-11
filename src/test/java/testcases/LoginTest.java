@@ -22,9 +22,14 @@ public class LoginTest extends TestBase {
 	@DataProvider(name = "loginCredentials")
     public Object[][] getLoginData() {
         return new Object[][]{
-            {ConfigReader.getProperty("manager.username"), ConfigReader.getProperty("manager.password"), "Manager 1"},
+        	{ConfigReader.getProperty("manager.username"), ConfigReader.getProperty("manager.password"), "Manager 1"},
             {ConfigReader.getProperty("associate1.username"), ConfigReader.getProperty("associate1.password"), "Associate 1"},
-            {ConfigReader.getProperty("associate2.username"), ConfigReader.getProperty("associate2.password"), "Associate 2"}
+            {ConfigReader.getProperty("associate2.username"), ConfigReader.getProperty("associate2.password"), "Associate 2"},
+            
+            {"invalid@ictkerala.org", "wrongpass", "Invalid User"},
+            {"", ConfigReader.getProperty("manager.password"), "Empty Username"},
+            {ConfigReader.getProperty("manager.username"), "", "Empty Password"},
+            {"", "", "Both Empty"}
         };
     }
 	
