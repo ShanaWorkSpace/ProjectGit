@@ -1,5 +1,9 @@
 package testcases;
 
+import java.time.Duration;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -31,16 +35,20 @@ public class DashboardTest extends TestBase {
 
     @Test(dataProvider = "userCredentials")
     public void verifyDashboardForMultipleUsers(String username, String password, String expectedRole) {
-        // Step 1: Login
+    	// Step 1: Login
     	loginPage.username(username);
-        loginPage.password(password);
-        loginPage.view_buttonclick();
-        
-        
-        // Step 2: Verify the Current URL
-        String currentUrl = dashboardPage.getCurrentUrl();
-        System.out.println(currentUrl);
-//      Assert.assertTrue(currentUrl.contains("https://dev.visit.ictkerala.org/"), "Dashboard URL Mismatch!");
+    	loginPage.password(password);
+    	loginPage.view_buttonclick();
+
+    	// Step 2: Wait until the Dashboard loads
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    	wait.until(ExpectedConditions.urlContains("homepage"));
+
+    	// Step 3: Get the correct URL
+    	String currentUrl = driver.getCurrentUrl();
+    	System.out.println("Current URL after login: " + currentUrl);
+    	Assert.assertTrue(currentUrl.contains("https://dev.visit.ictkerala.org/homepage"), "Dashboard URL Mismatch!");
+
 
         // Step 3: Verify Dashboard Title
         String dashboardTitle = dashboardPage.getDashboardTitle();
