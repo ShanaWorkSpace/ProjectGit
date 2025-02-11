@@ -19,52 +19,42 @@ public class DashboardPage {
 
     // Fetch Dashboard Title
     public String getDashboardTitle() {
-        WebElement titleElement = driver.findElement(By.xpath("//h3[contains(text(),'Dashboard')]"));
+        WebElement titleElement = driver.findElement(By.xpath("/html/body/div/div/header/div[1]/div/h3]"));
         return titleElement.getText();
     }
 
     // Get User Role (e.g., "Manager 1", "Associate 1", "Associate 2")
     public String getUserRole() {
-        WebElement roleElement = driver.findElement(By.xpath("//p[contains(@class, 'text-')]"));
+        WebElement roleElement = driver.findElement(By.xpath("/html/body/div/div/header/div[2]/div[2]/p"));
         return roleElement.getText().trim();
     }
 
     // Get Total Visits Count
     public String getTotalVisits() {
-        WebElement totalVisits = driver.findElement(By.xpath("//div[contains(text(),'Total Visits')]/following-sibling::h2"));
+        WebElement totalVisits = driver.findElement(By.xpath("/html/body/div/div/div/main/div[1]/div[1]/div[2]/div/h2"));
         return totalVisits.getText();
     }
 
     // Get Upcoming Visits Count
     public String getUpcomingVisits() {
-        WebElement upcomingVisits = driver.findElement(By.xpath("//div[contains(text(),'Upcoming Visits')]/following-sibling::h2"));
+        WebElement upcomingVisits = driver.findElement(By.xpath("/html/body/div/div/div/main/div[1]/div[2]/div[2]/div/h2"));
         return upcomingVisits.getText();
     }
 
-    // Get Organizational Statistics Count
-    public String getOrganizationalStats() {
-        WebElement orgStats = driver.findElement(By.xpath("//div[contains(text(),'Organizational Statistics')]/following-sibling::h2"));
-        return orgStats.getText();
-    }
-
-    // Get Visit View Count
-    public String getVisitView() {
-        WebElement visitView = driver.findElement(By.xpath("//div[contains(text(),'Visit View')]/following-sibling::h2"));
-        return visitView.getText();
-    }
+    
 
     // Open notification panel
     public boolean openNotification() {
-        WebElement notificationIcon = driver.findElement(By.cssSelector("button.notification-icon"));
+        WebElement notificationIcon = driver.findElement(By.xpath("/html/body/div/div/div/main/div[1]/div[5]/div/div/div[1]/div/div/div[2]/h1"));
         notificationIcon.click();
-        WebElement notificationPopup = driver.findElement(By.cssSelector("div.notification-popup"));
+        WebElement notificationPopup = driver.findElement(By.xpath("/html/body/div/div/div/main/div[1]/div[5]/div/div/div[2]/div/div/div[2]/div[1]/div/div[2]/span"));
         return notificationPopup.isDisplayed();
     }
 
     // Close notification
     public boolean closeNotification() {
-        WebElement closeBtn = driver.findElement(By.cssSelector("button.close-notification"));
+        WebElement closeBtn = driver.findElement(By.xpath("/html/body/div/div/div/main/div[1]/div[5]/div/div/div[2]/div/div/div[2]/div[1]/div/div[3]/svg"));
         closeBtn.click();
-        return driver.findElements(By.cssSelector("div.notification-popup")).isEmpty();
+        return driver.findElements(By.xpath("/html/body/div/div/div/main/div[1]/div[5]/div/div/div[1]/div/div/div[2]/p")).isEmpty();
     }
 }
