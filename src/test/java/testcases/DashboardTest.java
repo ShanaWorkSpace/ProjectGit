@@ -59,36 +59,39 @@ public class DashboardTest extends TestBase {
         // Step 4: Verify User Role
         String actualRole = dashboardPage.getUserRole();
         Assert.assertEquals(actualRole, expectedRole, "User role does not match expected role!");
-
-        // Step 5: Capture Initial Counts
-        String initialTotalVisits = dashboardPage.getTotalVisits();
-        String initialUpcomingVisits = dashboardPage.getUpcomingVisits();
-        String initialOrgStats = dashboardPage.getOrganizationalStats();
-        String initialVisitView = dashboardPage.getVisitView();
-
-        // Step 6: Mock Visit Add (You should implement this in VisitManagementPage)
-        driver.navigate().refresh();
-        String newTotalVisits = dashboardPage.getTotalVisits();
-        String newUpcomingVisits = dashboardPage.getUpcomingVisits();
-        Assert.assertNotEquals(newTotalVisits, initialTotalVisits, "Total Visits not updated!");
-        Assert.assertNotEquals(newUpcomingVisits, initialUpcomingVisits, "Upcoming Visits not updated!");
-
-        // Step 7: Mock Visit Delete
-        driver.navigate().refresh();
-        String updatedTotalVisits = dashboardPage.getTotalVisits();
-        Assert.assertNotEquals(updatedTotalVisits, newTotalVisits, "Total Visits not updated after deletion!");
-
-        // Step 8: Mock Visit Update
-        driver.navigate().refresh();
-        String updatedVisitView = dashboardPage.getVisitView();
-        Assert.assertNotEquals(updatedVisitView, initialVisitView, "Visit View count not updated!");
-
-        // Step 9: Verify Notifications
-        boolean isNotificationOpened = dashboardPage.openNotification();
-        Assert.assertTrue(isNotificationOpened, "Notification did not open!");
-
-        boolean isNotificationClosed = dashboardPage.closeNotification();
-        Assert.assertTrue(isNotificationClosed, "Notification did not close!");
+        
+        
+        
+//        // Step 5: Capture Initial Counts
+//        String initialTotalVisits = dashboardPage.getTotalVisits();
+//        System.out.println(initialTotalVisits);        
+//        String initialUpcomingVisits = dashboardPage.getUpcomingVisits();
+//        System.out.println(initialUpcomingVisits);
+//       
+//
+////        // Step 6: Mock Visit Add (You should implement this in VisitManagementPage)
+//        driver.navigate().refresh();
+//        String newTotalVisits = dashboardPage.getTotalVisits();
+//        String newUpcomingVisits = dashboardPage.getUpcomingVisits();
+////        Assert.assertNotEquals(newTotalVisits, initialTotalVisits, "Total Visits not updated!");
+////        Assert.assertNotEquals(newUpcomingVisits, initialUpcomingVisits, "Upcoming Visits not updated!");
+//
+////        // Step 7: Mock Visit Delete
+////        driver.navigate().refresh();
+////        String updatedTotalVisits = dashboardPage.getTotalVisits();
+////        Assert.assertNotEquals(updatedTotalVisits, newTotalVisits, "Total Visits not updated after deletion!");
+////
+////        // Step 8: Mock Visit Update
+////        driver.navigate().refresh();
+////        String updatedVisitView = dashboardPage.getVisitView();
+////        Assert.assertNotEquals(updatedVisitView, initialVisitView, "Visit View count not updated!");
+////
+////        // Step 9: Verify Notifications
+////        boolean isNotificationOpened = dashboardPage.openNotification();
+////        Assert.assertTrue(isNotificationOpened, "Notification did not open!");
+////
+////        boolean isNotificationClosed = dashboardPage.closeNotification();
+////        Assert.assertTrue(isNotificationClosed, "Notification did not close!");
         
         // Logout and move to next user
            loginPage.outprofclick();

@@ -1,14 +1,20 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DashboardPage {
     WebDriver driver;
+	private WebDriverWait wait;
 
     public DashboardPage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // 10-second explicit wait
     }
 
     // Get current URL
@@ -25,46 +31,54 @@ public class DashboardPage {
 
     // Get User Role (e.g., "Manager 1", "Associate 1", "Associate 2")
     public String getUserRole() {
-        WebElement roleElement = driver.findElement(By.xpath("//p[contains(@class, 'text-')]"));
+        WebElement roleElement = driver.findElement(By.xpath("//*[@id=\"root\"]/div/header/div[2]/div[2]/p"));
         return roleElement.getText().trim();
     }
 
     // Get Total Visits Count
     public String getTotalVisits() {
-        WebElement totalVisits = driver.findElement(By.xpath("//div[contains(text(),'Total Visits')]/following-sibling::h2"));
+    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        By totalVisitsLocator = By.xpath("//h2[contains(@class, 'font-bold text-[5.2rem]')]");
+        
+        // Wait until the element is visible
+        wait.until(ExpectedConditions.visibilityOfElementLocated(totalVisitsLocator));
+
+        WebElement totalVisits = driver.findElement(totalVisitsLocator);
         return totalVisits.getText();
     }
 
-    // Get Upcoming Visits Count
+ // Get Upcoming Visits Count with Wait
     public String getUpcomingVisits() {
-        WebElement upcomingVisits = driver.findElement(By.xpath("//div[contains(text(),'Upcoming Visits')]/following-sibling::h2"));
-        return upcomingVisits.getText();
+        By locator = By.xpath("//div[contains(text(),'Upcoming Visits')]/following-sibling::h2");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return driver.findElement(locator).getText();
     }
 
-    // Get Organizational Statistics Count
+    // Get Organizational Statistics Count with Wait
     public String getOrganizationalStats() {
-        WebElement orgStats = driver.findElement(By.xpath("//div[contains(text(),'Organizational Statistics')]/following-sibling::h2"));
-        return orgStats.getText();
+        By locator = By.xpath("//div[contains(text(),'Organizational Statistics')]/following-sibling::h2");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return driver.findElement(locator).getText();
     }
 
-    // Get Visit View Count
+    // Get Visit View Count with Wait
     public String getVisitView() {
-        WebElement visitView = driver.findElement(By.xpath("//div[contains(text(),'Visit View')]/following-sibling::h2"));
-        return visitView.getText();
+        By locator = By.xpath("//div[contains(text(),'Visit View')]/following-sibling::h2");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return driver.findElement(locator).getText();
     }
 
-    // Open notification panel
+    // Open notification panel with Wait
     public boolean openNotification() {
-        WebElement notificationIcon = driver.findElement(By.cssSelector("button.notification-icon"));
-        notificationIcon.click();
-        WebElement notificationPopup = driver.findElement(By.cssSelector("div.notification-popup"));
-        return notificationPopup.isDisplayed();
-    }
+        By iconLocator = By.cssSelector("button.notification-icon");
+        By popupLocator = By.cssSelector("div.notification-popup");
 
-    // Close notification
-    public boolean closeNotification() {
-        WebElement closeBtn = driver.findElement(By.cssSelector("button.close-notification"));
-        closeBtn.click();
-        return driver.findElements(By.cssSelector("div.notification-popup")).isEmpty();
+        // Wait for the notification icon to be clickable
+        wait.until(ExpectedConditions.elementToBeClickable(iconLocator));
+        driver.findElement(iconLocator).click();
+
+        // Wait for the notification popup to be visible
+        wait.until(ExpectedConditions.visibilityOfElementLocated(popupLocator));
+        return driver.findElement(popupLocator).isDisplayed();
     }
 }
