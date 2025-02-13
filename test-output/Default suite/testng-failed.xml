@@ -5,9 +5,9 @@
     <classes>
       <class name="testcases.LoginTest">
         <methods>
+          <include name="negativeLoginTest" invocation-numbers="0 1 2 3"/>
           <include name="objInt"/>
           <include name="aftertest"/>
-          <include name="firsttest" invocation-numbers="1 2"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- testcases.LoginTest -->

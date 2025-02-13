@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="testcases.VisitManagementTest">
+        <methods>
+          <include name="aftertest"/>
+          <include name="setupPages"/>
+          <include name="setUp"/>
+          <include name="addUpdateDeleteVisitTest"/>
+        </methods>
+      </class> <!-- testcases.VisitManagementTest -->
+      <class name="testcases.DashboardTest">
+        <methods>
+          <include name="aftertest"/>
+          <include name="verifyDashboardForMultipleUsers" invocation-numbers="0 1 2"/>
+          <include name="setupPages"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testcases.DashboardTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
