@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-13T19:18:15 IST" name="Default suite" finished-at="2025-02-13T19:18:27 IST" duration-ms="12097">
+  <suite started-at="2025-02-13T19:35:16 IST" name="Default suite" finished-at="2025-02-13T19:35:28 IST" duration-ms="11944">
     <groups>
     </groups>
-    <test started-at="2025-02-13T19:18:15 IST" name="Default test" finished-at="2025-02-13T19:18:27 IST" duration-ms="12097">
+    <test started-at="2025-02-13T19:35:16 IST" name="Default test" finished-at="2025-02-13T19:35:28 IST" duration-ms="11944">
       <class name="testcases.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:18:15 IST" name="setUp" finished-at="2025-02-13T19:18:17 IST" duration-ms="2106" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:35:16 IST" name="setUp" finished-at="2025-02-13T19:35:18 IST" duration-ms="2566" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="objInt()[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:18:17 IST" name="objInt" finished-at="2025-02-13T19:18:17 IST" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="objInt()[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:35:18 IST" name="objInt" finished-at="2025-02-13T19:35:18 IST" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- objInt -->
-        <test-method signature="firsttest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:18:17 IST" name="firsttest" data-provider="loginCredentials" finished-at="2025-02-13T19:18:19 IST" duration-ms="1332" status="PASS">
+        <test-method signature="firsttest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:35:18 IST" name="firsttest" data-provider="loginCredentials" finished-at="2025-02-13T19:35:20 IST" duration-ms="1389" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -36,7 +36,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- firsttest -->
-        <test-method signature="firsttest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:18:19 IST" name="firsttest" data-provider="loginCredentials" finished-at="2025-02-13T19:18:20 IST" duration-ms="1517" status="PASS">
+        <test-method signature="firsttest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:35:20 IST" name="firsttest" data-provider="loginCredentials" finished-at="2025-02-13T19:35:21 IST" duration-ms="1301" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -57,7 +57,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- firsttest -->
-        <test-method signature="firsttest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:18:20 IST" name="firsttest" data-provider="loginCredentials" finished-at="2025-02-13T19:18:21 IST" duration-ms="1247" status="PASS">
+        <test-method signature="firsttest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:35:21 IST" name="firsttest" data-provider="loginCredentials" finished-at="2025-02-13T19:35:22 IST" duration-ms="1190" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -78,7 +78,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- firsttest -->
-        <test-method signature="negativeLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:18:21 IST" name="negativeLoginTest" data-provider="invalidLoginCredentials" finished-at="2025-02-13T19:18:23 IST" duration-ms="1312" status="PASS">
+        <test-method signature="negativeLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:35:22 IST" name="negativeLoginTest" data-provider="invalidLoginCredentials" finished-at="2025-02-13T19:35:24 IST" duration-ms="1270" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -99,7 +99,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeLoginTest -->
-        <test-method signature="negativeLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:18:23 IST" name="negativeLoginTest" data-provider="invalidLoginCredentials" finished-at="2025-02-13T19:18:24 IST" duration-ms="1401" status="PASS">
+        <test-method signature="negativeLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:35:24 IST" name="negativeLoginTest" data-provider="invalidLoginCredentials" finished-at="2025-02-13T19:35:25 IST" duration-ms="1331" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -120,7 +120,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeLoginTest -->
-        <test-method signature="negativeLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:18:24 IST" name="negativeLoginTest" data-provider="invalidLoginCredentials" finished-at="2025-02-13T19:18:26 IST" duration-ms="1482" status="PASS">
+        <test-method signature="negativeLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:35:25 IST" name="negativeLoginTest" data-provider="invalidLoginCredentials" finished-at="2025-02-13T19:35:26 IST" duration-ms="1352" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -141,7 +141,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeLoginTest -->
-        <test-method signature="negativeLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:18:26 IST" name="negativeLoginTest" data-provider="invalidLoginCredentials" finished-at="2025-02-13T19:18:27 IST" duration-ms="1430" status="PASS">
+        <test-method signature="negativeLoginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:35:26 IST" name="negativeLoginTest" data-provider="invalidLoginCredentials" finished-at="2025-02-13T19:35:28 IST" duration-ms="1301" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -162,7 +162,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- negativeLoginTest -->
-        <test-method is-config="true" signature="aftertest()[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:18:27 IST" name="aftertest" finished-at="2025-02-13T19:18:27 IST" duration-ms="209" status="PASS">
+        <test-method is-config="true" signature="aftertest()[pri:0, instance:testcases.LoginTest@7c7a06ec]" started-at="2025-02-13T19:35:28 IST" name="aftertest" finished-at="2025-02-13T19:35:28 IST" duration-ms="189" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftertest -->

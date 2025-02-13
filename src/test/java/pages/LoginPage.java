@@ -118,7 +118,7 @@ public String locateErrorMessage() {
 
     for (String xpath : xpaths) {
         try {
-            WebElement errorElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+            WebElement errorElement = driver.findElement(By.xpath(xpath));
             return errorElement.getText();
         } catch (Exception ignored) {
         }
