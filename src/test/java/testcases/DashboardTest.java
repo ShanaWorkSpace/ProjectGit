@@ -1,7 +1,6 @@
 package testcases;
 
 import java.time.Duration;
-
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -22,8 +21,21 @@ public class DashboardTest extends TestBase {
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
     }
+    
+    // Helper method for logging in based on role.
+    private void loginAs(String role) {
+        if (role.equalsIgnoreCase("manager")) {
+            loginPage.enterUsername(ConfigReader.getProperty("manager.username"));
+            loginPage.enterPassword(ConfigReader.getProperty("manager.password"));
+        } else if (role.equalsIgnoreCase("associate")) {
+            // Here we pick associate1; adjust if you want a different associate
+            loginPage.enterUsername(ConfigReader.getProperty("associate1.username"));
+            loginPage.enterPassword(ConfigReader.getProperty("associate1.password"));
+        }
+        loginPage.clickLoginButton();
+    }
 
-    // DataProvider for login credentials
+    // DataProvider for multiple user credentials
     @DataProvider(name = "userCredentials")
     public Object[][] getUserCredentials() {
         return new Object[][]{
@@ -33,72 +45,59 @@ public class DashboardTest extends TestBase {
         };
     }
 
-    @Test(dataProvider = "userCredentials")
+    // Test: Verify Dashboard details for each user
+    @Test(priority = 1, dataProvider = "userCredentials")
     public void verifyDashboardForMultipleUsers(String username, String password, String expectedRole) {
-    	// Step 1: Login
-    	loginPage.username(username);
-    	loginPage.password(password);
-    	loginPage.view_buttonclick();
+        // Login
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickLoginButton();
 
-    	// Step 2: Wait until the Dashboard loads
-    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    	wait.until(ExpectedConditions.urlContains("homepage"));
+        // Wait until the Dashboard loads (URL should contain "homepage")
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.urlContains("homepage"));
 
-    	// Step 3: Get the correct URL
-    	String currentUrl = driver.getCurrentUrl();
-    	System.out.println("Current URL after login: " + currentUrl);
-    	Assert.assertTrue(currentUrl.contains("https://dev.visit.ictkerala.org/homepage"), "Dashboard URL Mismatch!");
+        // Verify current URL
+        String currentUrl = dashboardPage.getCurrentUrl();
+        System.out.println("Current URL after login: " + currentUrl);
+        Assert.assertTrue(currentUrl.contains("https://dev.visit.ictkerala.org/homepage"), "Dashboard URL Mismatch!");
 
-
-        // Step 3: Verify Dashboard Title
+        // Verify Dashboard Title
         String dashboardTitle = dashboardPage.getDashboardTitle();
-        System.out.println(dashboardTitle);
+        System.out.println("Dashboard Title: " + dashboardTitle);
         Assert.assertEquals(dashboardTitle, "Dashboard", "Dashboard Title Mismatch!");
-     
 
-        // Step 4: Verify User Role
+        // Verify User Role
         String actualRole = dashboardPage.getUserRole();
-        System.out.println(actualRole);
-        System.out.println(expectedRole);
+        System.out.println("Actual Role: " + actualRole);
+        System.out.println("Expected Role: " + expectedRole);
         Assert.assertEquals(actualRole, expectedRole, "User role does not match expected role!");
-        
-        
-        
-//        // Step 5: Capture Initial Counts
-//        String initialTotalVisits = dashboardPage.getTotalVisits();
-//        System.out.println(initialTotalVisits);        
-//        String initialUpcomingVisits = dashboardPage.getUpcomingVisits();
-//        System.out.println(initialUpcomingVisits);
-//       
-//
-////        // Step 6: Mock Visit Add (You should implement this in VisitManagementPage)
-//        driver.navigate().refresh();
-//        String newTotalVisits = dashboardPage.getTotalVisits();
-//        String newUpcomingVisits = dashboardPage.getUpcomingVisits();
-////        Assert.assertNotEquals(newTotalVisits, initialTotalVisits, "Total Visits not updated!");
-////        Assert.assertNotEquals(newUpcomingVisits, initialUpcomingVisits, "Upcoming Visits not updated!");
-//
-////        // Step 7: Mock Visit Delete
-////        driver.navigate().refresh();
-////        String updatedTotalVisits = dashboardPage.getTotalVisits();
-////        Assert.assertNotEquals(updatedTotalVisits, newTotalVisits, "Total Visits not updated after deletion!");
-////
-////        // Step 8: Mock Visit Update
-////        driver.navigate().refresh();
-////        String updatedVisitView = dashboardPage.getVisitView();
-////        Assert.assertNotEquals(updatedVisitView, initialVisitView, "Visit View count not updated!");
-////
-////        // Step 9: Verify Notifications
-////        boolean isNotificationOpened = dashboardPage.openNotification();
-////        Assert.assertTrue(isNotificationOpened, "Notification did not open!");
-////
-////        boolean isNotificationClosed = dashboardPage.closeNotification();
-////        Assert.assertTrue(isNotificationClosed, "Notification did not close!");
-        
-        // Logout and move to next user
-           loginPage.outprofclick();
-           loginPage.outbuttonclick();
-       }
-        
+
+        // Logout to prepare for the next iteration
+        loginPage.clickProfile();
+        loginPage.clickLogoutButton();
     }
 
+    // Test: Verify that the Dashboard elements load properly for Manager
+    @Test(priority = 2)
+    public void verifyDashboardElementsAsManager() {
+        loginAs("manager");
+        // Wait briefly to ensure page load
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.urlContains("homepage"));
+        Assert.assertTrue(dashboardPage.isDashboardDisplayed(), "Manager Dashboard is not loaded properly");
+        System.out.println("Manager dashboard loaded properly");
+        loginPage.clickProfile();
+        loginPage.clickLogoutButton();
+    }
+
+    // Test: Verify that the Dashboard elements load properly for Associate
+    @Test(priority = 3)
+    public void verifyDashboardElementsAsAssociate() {
+        loginAs("associate");
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.urlContains("homepage"));
+        Assert.assertTrue(dashboardPage.isDashboardDisplayed(), "Associate Dashboard is not loaded properly");
+        System.out.println("Associate dashboard loaded properly");
+        loginPage.clickProfile();
+        loginPage.clickLogoutButton();
+    }
+}
