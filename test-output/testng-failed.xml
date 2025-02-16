@@ -3,13 +3,24 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< Updated upstream
       <class name="pages.NegativeLoginTest">
         <methods>
           <include name="negativeLoginTest" invocation-numbers="0 1 2 3"/>
+=======
+      <class name="testcases.VisitManagementTest">
+        <methods>
+>>>>>>> Stashed changes
           <include name="aftertest"/>
+          <include name="setupPages"/>
           <include name="setUp"/>
+          <include name="addUpdateDeleteVisitTest"/>
         </methods>
+<<<<<<< Updated upstream
       </class> <!-- pages.NegativeLoginTest -->
+=======
+      </class> <!-- testcases.VisitManagementTest -->
+>>>>>>> Stashed changes
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
