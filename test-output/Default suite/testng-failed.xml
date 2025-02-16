@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.DashboardTest">
+      <class name="pages.NegativeLoginTest">
         <methods>
+          <include name="negativeLoginTest" invocation-numbers="0 1 2 3"/>
           <include name="aftertest"/>
-          <include name="verifyDashboardForMultipleUsers" invocation-numbers="0 1 2"/>
-          <include name="setupPages"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- testcases.DashboardTest -->
+      </class> <!-- pages.NegativeLoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

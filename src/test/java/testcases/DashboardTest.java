@@ -58,6 +58,8 @@ public class DashboardTest extends TestBase {
 
         // Step 4: Verify User Role
         String actualRole = dashboardPage.getUserRole();
+        System.out.println(actualRole);
+        System.out.println(expectedRole);
         Assert.assertEquals(actualRole, expectedRole, "User role does not match expected role!");
         
         
