@@ -7,10 +7,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class UpcomingVisit {
+public class UpdateVisit {
     WebDriver driver;
     
-    public UpcomingVisit(WebDriver drv) {
+    public UpdateVisit(WebDriver drv) {
         this.driver = drv;
     }
     

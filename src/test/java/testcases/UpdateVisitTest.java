@@ -4,12 +4,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import base.TestBase;
 import pages.LoginPage;
-import pages.UpcomingVisit;
+import pages.UpdateVisit;
 import utils.ConfigReader;
 
-public class UpcomingVisitTest extends TestBase {
+public class UpdateVisitTest extends TestBase {
     LoginPage login;
-    UpcomingVisit visit;
+    UpdateVisit visit;
     
     // Helper method to log in as a specific role.
     // Refresh the login page before entering credentials.
@@ -30,7 +30,7 @@ public class UpcomingVisitTest extends TestBase {
     @Test(priority = 1)
     public void verifyVisitManager() {
         loginAs("manager");
-        visit = new UpcomingVisit(driver);
+        visit = new UpdateVisit(driver);
         
         // Verify Upcoming Visits section is displayed properly
         Assert.assertTrue(visit.isdisplayed(), "Upcoming Visit field is not proper");
@@ -65,7 +65,7 @@ public class UpcomingVisitTest extends TestBase {
     @Test(priority = 2)
     public void verifyVisitAssociate() {
         loginAs("associate");
-        visit = new UpcomingVisit(driver);
+        visit = new UpdateVisit(driver);
         
         // Verify Upcoming Visits section is displayed properly
         Assert.assertTrue(visit.isdisplayed(), "Upcoming Visit field is not proper");
