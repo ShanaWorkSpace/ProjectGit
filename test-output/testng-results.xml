@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-17T22:08:27 IST" name="Default suite" finished-at="2025-02-17T22:08:38 IST" duration-ms="11420">
+  <suite started-at="2025-02-17T22:42:17 IST" name="Default suite" finished-at="2025-02-17T22:42:32 IST" duration-ms="15193">
     <groups>
     </groups>
-    <test started-at="2025-02-17T22:08:27 IST" name="Default test" finished-at="2025-02-17T22:08:38 IST" duration-ms="11420">
+    <test started-at="2025-02-17T22:42:17 IST" name="Default test" finished-at="2025-02-17T22:42:32 IST" duration-ms="15193">
       <class name="testcases.UpcomingVisitTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.UpcomingVisitTest@33d512c1]" started-at="2025-02-17T22:08:27 IST" name="setUp" finished-at="2025-02-17T22:08:30 IST" duration-ms="3438" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testcases.UpcomingVisitTest@33d512c1]" started-at="2025-02-17T22:42:17 IST" name="setUp" finished-at="2025-02-17T22:42:23 IST" duration-ms="6606" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyVisitManager()[pri:1, instance:testcases.UpcomingVisitTest@33d512c1]" started-at="2025-02-17T22:08:30 IST" name="verifyVisitManager" finished-at="2025-02-17T22:08:34 IST" duration-ms="4438" status="FAIL">
+        <test-method signature="verifyVisitManager()[pri:1, instance:testcases.UpcomingVisitTest@33d512c1]" started-at="2025-02-17T22:42:23 IST" name="verifyVisitManager" finished-at="2025-02-17T22:42:28 IST" duration-ms="5140" status="FAIL">
           <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
               <![CDATA[element click intercepted: Element <div class=" css-1dimb5e-singleValue">...</div> is not clickable at point (732, 609). Other element would receive the click: <div class=" css-19bb58m" data-value="">...</div>
@@ -19,10 +19,10 @@
 Build info: version: '4.27.0', revision: 'd6e718d134'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [61dda88c3350772a0c304096a915ce24, clickElement {id=f.E51E947D2C493B679F3ABCFFCE7FCC86.d.DF6DFAD965FDFA9D17FC72834DD5B03A.e.140}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gssar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60090}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60090/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (61dda88c3350772a0c304096a915ce24)] -> xpath: (//div[text()='Action Needed'])[2]]
-Session ID: 61dda88c3350772a0c304096a915ce24]]>
+Command: [23ff5d848f3b6e74894afc7bfac73adc, clickElement {id=f.759B98A8CF62CC8C6D3955B48BC9E32C.d.DDCBA23DB7BAC18973EC82A7BEEE22E1.e.151}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gssar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61693}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61693/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (23ff5d848f3b6e74894afc7bfac73adc)] -> xpath: (//div[text()='Action Needed'])[2]]
+Session ID: 23ff5d848f3b6e74894afc7bfac73adc]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class=" css-1dimb5e-singleValue">...</div> is not clickable at point (732, 609). Other element would receive the click: <div class=" css-19bb58m" data-value="">...</div>
@@ -30,10 +30,10 @@ Session ID: 61dda88c3350772a0c304096a915ce24]]>
 Build info: version: '4.27.0', revision: 'd6e718d134'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [61dda88c3350772a0c304096a915ce24, clickElement {id=f.E51E947D2C493B679F3ABCFFCE7FCC86.d.DF6DFAD965FDFA9D17FC72834DD5B03A.e.140}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gssar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60090}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60090/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (61dda88c3350772a0c304096a915ce24)] -> xpath: (//div[text()='Action Needed'])[2]]
-Session ID: 61dda88c3350772a0c304096a915ce24
+Command: [23ff5d848f3b6e74894afc7bfac73adc, clickElement {id=f.759B98A8CF62CC8C6D3955B48BC9E32C.d.DDCBA23DB7BAC18973EC82A7BEEE22E1.e.151}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.98, chrome: {chromedriverVersion: 133.0.6943.98 (da53563ceb66..., userDataDir: C:\Users\gssar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61693}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61693/devtoo..., se:cdpVersion: 133.0.6943.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (23ff5d848f3b6e74894afc7bfac73adc)] -> xpath: (//div[text()='Action Needed'])[2]]
+Session ID: 23ff5d848f3b6e74894afc7bfac73adc
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -80,11 +80,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyVisitManager -->
-        <test-method signature="verifyVisitAssociate()[pri:2, instance:testcases.UpcomingVisitTest@33d512c1]" started-at="2025-02-17T22:08:34 IST" name="verifyVisitAssociate" finished-at="2025-02-17T22:08:38 IST" duration-ms="3155" status="PASS">
+        <test-method signature="verifyVisitAssociate()[pri:2, instance:testcases.UpcomingVisitTest@33d512c1]" started-at="2025-02-17T22:42:28 IST" name="verifyVisitAssociate" finished-at="2025-02-17T22:42:31 IST" duration-ms="2967" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyVisitAssociate -->
-        <test-method is-config="true" signature="aftertest()[pri:0, instance:testcases.UpcomingVisitTest@33d512c1]" started-at="2025-02-17T22:08:38 IST" name="aftertest" finished-at="2025-02-17T22:08:38 IST" duration-ms="293" status="PASS">
+        <test-method is-config="true" signature="aftertest()[pri:0, instance:testcases.UpcomingVisitTest@33d512c1]" started-at="2025-02-17T22:42:31 IST" name="aftertest" finished-at="2025-02-17T22:42:32 IST" duration-ms="360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftertest -->

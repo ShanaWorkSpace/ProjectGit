@@ -20,6 +20,7 @@ public class UpcomingVisit {
             WebElement fieldTitle = driver.findElement(By.xpath("(//h2[text()='Upcoming Visits'])[2]"));
             WebElement inst = driver.findElement(By.xpath("//th[text()='Institutions']"));
             WebElement instType = driver.findElement(By.xpath("//th[text()='Institutions Type']"));
+            WebElement date = driver.findElement(By.xpath("//th[text()='Date']"));
             WebElement empName = driver.findElement(By.xpath("//th[text()='Employee Name']"));
             WebElement cntPerson = driver.findElement(By.xpath("//th[text()='Contact Person']"));
             WebElement status = driver.findElement(By.xpath("//th[text()='Status']"));
