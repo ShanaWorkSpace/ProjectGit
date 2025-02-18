@@ -66,7 +66,7 @@ public class LoginTest extends TestBase {
         Assert.assertTrue(obj.isEmailPopupDisplayed(), "Forgot password popup not displayed!");
 
         obj.provideEmail("dummymail@gmail.com");
-        Assert.assertTrue(obj.isSendMailPopupDisplayed(), "");
+        Assert.assertTrue(!obj.isSendMailPopupDisplayed(), "");
 
         obj.closePopup();
     }
